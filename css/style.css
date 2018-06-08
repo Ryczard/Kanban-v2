@@ -1,0 +1,29 @@
+.board { text-align: center; min-height: 95vh; }
+
+.board button:hover { cursor: pointer; }
+
+.column-container { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.column { text-align: left; min-height: 300px; width: 300px; display: inline-block; margin: 2rem 1rem; border: 4px solid #f7b731; border-radius: 25px; background: rgba(254, 211, 48, 0.6); }
+
+.column .column-title { text-align: center; }
+
+.column-card-list { min-height: 60vh; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; list-style-type: none; padding: 1rem; }
+
+.card { list-style-type: none; border: 3px solid #a5b1c2; border-radius: 20px; padding: 1rem; margin: .6rem; max-width: 300px; text-align: justify; background: #d1d8e0; }
+
+.card .btn-delete { margin-left: 0; }
+
+.btn-delete { margin-left: 1.5rem; border-radius: 5px; }
+
+.btn-delete:hover { background: #eb3b5a; }
+
+h1 { font-size: 46px; }
+
+h2 { font-size: 38px; }
+
+p { font-size: 18px; }
+
+button { font-size: 20px; }
+
+button:hover { background: #20bf6b; color: white; }
