@@ -11,8 +11,17 @@ $('.create-column')
 	.click(function(){
 		var name = prompt('Enter a column name');
 			if (name != null){
-			var column = new Column(name);
-			board.addColumn(column);
+				$.ajax({
+					url: baseUrl + '/column',
+					method: 'POST',
+					data: {
+						name: name
+					},
+					success: function(response){
+						var column = new Column(response.id, name);
+						board.addColumn(column);						
+					}
+				});
 		}
 	});
 
