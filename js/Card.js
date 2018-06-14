@@ -3,21 +3,21 @@ function Card(id, name) {
 
 	this.id = id;
 	this.name = name || 'Untitled';
-	this.$element = createCard();
+	this.element = createCard();
 
 	function createCard() {
-		var $card = $('<li>').addClass('card');
-		var $cardDescription = $('<p>').addClass('card-description').text(self.name);
-		var $cardDelete = $('<button>').addClass('btn-delete').text('x');
+		var card = $('<li>').addClass('card');
+		var cardDescription = $('<p>').addClass('card-description').text(self.name);
+		var cardDelete = $('<button>').addClass('btn-delete').text('x');
 
-		$cardDelete.click(function(){
+		cardDelete.click(function(){
 			self.removeCard();
 		});
 
-		$card.append($cardDelete)
-			.append($cardDescription);
+		card.append(cardDelete)
+			.append(cardDescription);
 
-		return $card;
+		return card;
 	}
 }
 
@@ -29,7 +29,7 @@ Card.prototype = {
 				url: baseUrl + '/card/' + self.id,
 				method: 'DELETE',
 				success: function(){
-					self.$element.remove();
+					self.element.remove();
 				}
 			});	
 	}

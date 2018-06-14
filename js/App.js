@@ -30,19 +30,3 @@ function setupCards(col, cards) {
 		col.addCard(cardObj);
 	})
 }
-
-var todoColumn = new Column('To do');
-var doingColumn = new Column('Doing');
-var doneColumn = new Column('Done');
-
-board.addColumn(todoColumn);
-board.addColumn(doingColumn);
-board.addColumn(doneColumn);
-
-var card1 = new Card('New task');
-var card2 = new Card('Create kanban boards');
-var card3 = new Card('Another task');
-
-todoColumn.addCard(card1);
-todoColumn.addCard(card3);
-doingColumn.addCard(card2);

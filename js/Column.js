@@ -20,7 +20,7 @@ function Column(id, name) {
 			var name = prompt("Enter the name of the card");
 			event.preventDefault();
 
-			if (name != null){
+			
 				$.ajax({
 					url: baseUrl + '/card',
 					method: 'POST',
@@ -34,7 +34,7 @@ function Column(id, name) {
 					}
 				});
 
-			}
+			
 		});
 
 		$column.append($columnTitle)
