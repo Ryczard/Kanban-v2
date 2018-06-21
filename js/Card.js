@@ -27,7 +27,6 @@ function Card(id, name) {
 	}
 }
 
-
 Card.prototype = {
 	removeCard: function() {
 		var self = this;

@@ -54,10 +54,15 @@
 .btn-delete {
 	margin-left: 1.5rem;
 	border-radius: 5px;
+	&:hover {
+		background: #eb3b5a;
+	}
 }
-
-.btn-delete:hover {
-	background: #eb3b5a;
+.btn-edit {
+	border-radius: 5px;
+	&:hover {
+		background: #0984e3;
+	}
 }
 
 h1 {
