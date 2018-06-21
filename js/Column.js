@@ -19,24 +19,22 @@ function Column(id, name) {
 		columnDelete.click(function() {
 			self.removeColumn();
 		});
+
 		columnAddCard.click(function(event) {
 			var cardName = prompt("Enter the name of the card");
 			event.preventDefault();
-
-				$.ajax({
-					url: baseUrl + '/card',
-					method: 'POST',
-					data: {
+			$.ajax({
+				url: baseUrl + '/card',
+				method: 'POST',
+				data: {
 					name: cardName,
 					bootcamp_kanban_column_id: self.id
-					},
-					success: function(response) {
-						var card = new Card(response.id, cardName);
-						self.addCard(card);
-					}
-				});
-
-			
+				},
+				success: function(response) {
+					var card = new Card(response.id, cardName);
+					self.addCard(card);
+				}
+			});		
 		});
 
 		column.append(columnTitle)
