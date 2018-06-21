@@ -26,25 +26,7 @@ function Card(id, name) {
 		return card;
 	}
 }
-editCard: function() {
-    var self = this;
-    var newName = prompt('Enter a new name of card',
-      this.element.children('.card-description').text());
-    var columnId = this.element.closest('.column').attr('id');
-    
-    $.ajax({
-      url: baseUrl + '/card/' + self.id,
-      method: 'PUT',
-      data: {
-        id: self.id,
-        name: newName,
-        bootcamp_kanban_column_id: columnId
-      },
-      success: function(response) {
-        self.element.children('.card-description').text(newName);
-      }
-    });
-  }
+
 
 Card.prototype = {
 	removeCard: function() {
@@ -56,5 +38,25 @@ Card.prototype = {
 				self.element.remove();
 			}
 		});	
-	}
+	},
+
+	editCard: function() {
+    var self = this;
+    	var newName = prompt('Enter a new name of card',
+      		this.element.children('.card-description').text());
+    	var columnId = this.element.closest('.column').attr('id');
+    
+    	$.ajax({
+    		url: baseUrl + '/card/' + self.id,
+    		method: 'PUT',
+    		data: {
+        		id: self.id,
+        		name: newName,
+        		bootcamp_kanban_column_id: columnId
+      		},
+      	success: function(response) {
+        self.element.children('.card-description').text(newName);
+      	}
+    });
+  }
 }
